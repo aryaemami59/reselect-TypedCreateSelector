@@ -1,10 +1,10 @@
 import type {
-  UnknownFunction,
+  AnyFunction,
   Expand,
-  TuplifyUnion,
   Has,
+  IsTuple,
   List,
-  IsTuple
+  TuplifyUnion
 } from '../types'
 
 /** Given a set of input selectors, extracts the intersected parameters to determine
@@ -13,7 +13,7 @@ import type {
  */
 export type MergeParameters<
   // The actual array of input selectors
-  T extends readonly UnknownFunction[],
+  T extends readonly AnyFunction[],
   // Given those selectors, we do several transformations on the types in sequence:
   // 1) Extract "the type of parameters" for each input selector, so that we now have
   //    a tuple of all those parameters
@@ -77,7 +77,7 @@ type EmptyObject = {
 type IgnoreInvalidIntersections<T> = T extends EmptyObject ? never : T
 
 /** Extract the parameters from all functions as a tuple */
-export type ExtractParams<T extends readonly UnknownFunction[]> = {
+export type ExtractParams<T extends readonly AnyFunction[]> = {
   [index in keyof T]: T[index] extends T[number] ? Parameters<T[index]> : never
 }
 
