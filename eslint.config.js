@@ -4,19 +4,17 @@ import tsEslint from '@typescript-eslint/eslint-plugin'
 // @ts-expect-error
 import tsParser from '@typescript-eslint/parser'
 import globals from 'globals'
-// import path from "path";
-// import { fileURLToPath } from "url";
+// import path from 'node:path'
+// import { fileURLToPath } from 'node:url'
 
 // const __filename = fileURLToPath(import.meta.url)
 // const __dirname = path.dirname(__filename)
+const __dirname = import.meta.dirname
 
 const compat = new FlatCompat({
-  // baseDirectory: __dirname,
-  // resolvePluginsRelativeTo: __dirname
+  baseDirectory: __dirname,
+  resolvePluginsRelativeTo: __dirname
 })
-
-// console.log(tsEslint.configs.recommended)
-// console.log(tsEslint.configs['eslint-recommended'])
 
 /**
  * @type {import('eslint').Linter.FlatConfig[]}
