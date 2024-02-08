@@ -45,7 +45,9 @@ function multiArgMemoize<F extends (...args: any[]) => any>(
 
 describe('type tests', () => {
   test('selector', () => {
-    type State = { foo: string }
+    interface State {
+      foo: string
+    }
 
     const selector = createSelector(
       (state: State) => state.foo,
