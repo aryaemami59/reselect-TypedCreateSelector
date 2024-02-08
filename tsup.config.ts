@@ -1,24 +1,24 @@
-import { defineConfig, Options } from 'tsup'
-import fs from 'fs'
-import sh from 'shelljs'
-import type { ExecOptions } from 'shelljs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import type { Options } from 'tsup'
+import { defineConfig } from 'tsup'
 
-function execAsync(cmd: string, opts: ExecOptions = {}) {
-  return new Promise(function (resolve, reject) {
-    // Execute the command, reject if we exit non-zero (i.e. error)
-    sh.exec(cmd, opts, function (code, stdout, stderr) {
-      if (code !== 0) return reject(new Error(stderr))
-      return resolve(stdout)
-    })
-  })
-}
+// No __dirname under Node ESM
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const tsconfig: NonNullable<Options['tsconfig']> = path.join(
+  __dirname,
+  './tsconfig.build.json'
+)
 
 export default defineConfig(options => {
-  const commonOptions: Partial<Options> = {
+  const commonOptions = {
     entry: {
       reselect: 'src/index.ts'
     },
     sourcemap: true,
+    tsconfig,
     ...options
   }
 
@@ -55,10 +55,10 @@ export default defineConfig(options => {
       format: ['esm'],
       outExtension: () => ({ js: '.mjs' }),
       minify: true
-    },
+    } as Options,
     {
       ...commonOptions,
-      format: 'cjs',
+      format: ['cjs'],
       outDir: './dist/cjs/',
       outExtension: () => ({ js: '.cjs' })
     }
