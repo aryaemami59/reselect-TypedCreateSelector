@@ -1,13 +1,7 @@
-import type { PayloadAction } from '@reduxjs/toolkit'
+import type { AnyFunction, Simplify } from '@internal/types'
+import type { PayloadAction, lruMemoize } from '@reduxjs/toolkit'
 import { combineReducers, configureStore, createSlice } from '@reduxjs/toolkit'
-import { test } from 'vitest'
-import type { lruMemoize } from '../src/lruMemoize'
-import type {
-  AnyFunction,
-  OutputSelector,
-  SelectorArray,
-  Simplify
-} from '../src/types'
+import type { OutputSelector, SelectorArray } from 'reselect'
 
 export interface Todo {
   id: number

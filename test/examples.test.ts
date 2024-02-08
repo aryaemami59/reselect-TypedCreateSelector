@@ -11,7 +11,6 @@ import {
   lruMemoize,
   weakMapMemoize
 } from 'reselect'
-import { test } from 'vitest'
 import type { RootState } from './testUtils'
 import { addTodo, setupStore } from './testUtils'
 

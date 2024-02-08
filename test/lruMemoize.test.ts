@@ -1,7 +1,6 @@
 // TODO: Add test for React Redux connect function
 
 import { createSelectorCreator, lruMemoize } from 'reselect'
-import { vi } from 'vitest'
 
 const createSelector = createSelectorCreator({
   memoize: lruMemoize,
