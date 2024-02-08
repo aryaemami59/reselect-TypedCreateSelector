@@ -4,13 +4,15 @@
   "compilerOptions": {
     "emitDeclarationOnly": false,
     "noEmit": true,
-    "rootDir": "./src",
+    "rootDir": ".",
     "jsx": "react-jsx",
     "skipLibCheck": true,
     "noImplicitReturns": false
   },
   "exclude": ["dist", "dist", "website", "docs"],
   "include": [
+    "type-tests",
+    "test",
     "./**/*.test.ts*",
     "./**/*.test-d.ts*",
     "./**/*.spec.ts*",
