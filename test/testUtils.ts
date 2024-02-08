@@ -517,9 +517,41 @@ export const expensiveComputation = (times = 1_000_000) => {
 }
 
 export const setEnvToProd = () => {
-  const originalEnv = process.env.NODE_ENV
-  process.env.NODE_ENV = 'production'
-  return () => {
-    process.env.NODE_ENV = originalEnv
-  }
+  vi.stubEnv('NODE_ENV', 'production')
+  return vi.unstubAllEnvs
+}
+
+export const isMemoizedSelector = (selector: object) => {
+  return (
+    typeof selector === 'function' &&
+    'resultFunc' in selector &&
+    'memoizedResultFunc' in selector &&
+    'lastResult' in selector &&
+    'dependencies' in selector &&
+    'recomputations' in selector &&
+    'dependencyRecomputations' in selector &&
+    'resetRecomputations' in selector &&
+    'resetDependencyRecomputations' in selector &&
+    'memoize' in selector &&
+    'argsMemoize' in selector &&
+    typeof selector.resultFunc === 'function' &&
+    typeof selector.memoizedResultFunc === 'function' &&
+    typeof selector.lastResult === 'function' &&
+    Array.isArray(selector.dependencies) &&
+    typeof selector.recomputations === 'function' &&
+    typeof selector.dependencyRecomputations === 'function' &&
+    typeof selector.resetRecomputations === 'function' &&
+    typeof selector.resetDependencyRecomputations === 'function' &&
+    typeof selector.memoize === 'function' &&
+    typeof selector.argsMemoize === 'function' &&
+    selector.dependencies.length >= 1 &&
+    selector.dependencies.every(
+      (dependency): dependency is Function => typeof dependency === 'function'
+    ) &&
+    !selector.lastResult.length &&
+    !selector.recomputations.length &&
+    !selector.resetRecomputations.length &&
+    typeof selector.recomputations() === 'number' &&
+    typeof selector.dependencyRecomputations() === 'number'
+  )
 }
