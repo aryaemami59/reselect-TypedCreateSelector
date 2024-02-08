@@ -40,13 +40,13 @@ describe('createSelector.withTypes<RootState>()', () => {
       createAppSelector(
         [
           state => {
-            expectTypeOf(state).toEqualTypeOf<RootState>(rootState)
+            expectTypeOf(state).toEqualTypeOf(rootState)
 
             return state.todos
           }
         ],
         todos => {
-          expectTypeOf(todos).toEqualTypeOf<Todo[]>(rootState.todos)
+          expectTypeOf(todos).toEqualTypeOf<Todo[]>()
 
           return todos.map(({ id }) => id)
         }
@@ -61,7 +61,7 @@ describe('createSelector.withTypes<RootState>()', () => {
       // input selectors are provided as separate inline arguments.
       createAppSelector(
         state => {
-          expectTypeOf(state).toEqualTypeOf<RootState>(rootState)
+          expectTypeOf(state).toEqualTypeOf(rootState)
 
           return state.todos
         },
@@ -69,7 +69,7 @@ describe('createSelector.withTypes<RootState>()', () => {
           // Known limitation: Parameter types are not inferred in this scenario
           expectTypeOf(todos).toBeAny()
 
-          expectTypeOf(todos).not.toEqualTypeOf<Todo[]>(rootState.todos)
+          expectTypeOf(todos).not.toEqualTypeOf<Todo[]>()
 
           // @ts-expect-error A typed `createSelector` currently only infers
           // the parameter types of the result function when
@@ -84,12 +84,12 @@ describe('createSelector.withTypes<RootState>()', () => {
       // input selectors are provided as separate inline arguments.
       createAppSelector(
         state => {
-          expectTypeOf(state).toEqualTypeOf<RootState>(rootState)
+          expectTypeOf(state).toEqualTypeOf(rootState)
 
           return state.todos
         },
         state => {
-          expectTypeOf(state).toEqualTypeOf<RootState>(rootState)
+          expectTypeOf(state).toEqualTypeOf(rootState)
 
           return state.alerts
         },
