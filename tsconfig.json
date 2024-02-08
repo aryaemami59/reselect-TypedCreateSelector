@@ -5,8 +5,8 @@
   "extends": "./tsconfig.test.json",
   "compilerOptions": {
     "skipLibCheck": true,
-    "rootDir": "./src"
+    "rootDir": "."
   },
-  "include": ["src"],
+  "include": ["."],
   "exclude": ["dist", "website", "docs"]
 }
