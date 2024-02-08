@@ -9,13 +9,6 @@
     "skipLibCheck": true,
     "noImplicitReturns": false
   },
-  "exclude": ["dist", "website", "docs", "test/benchmarks", "src"],
-  "include": [
-    "type-tests",
-    "test",
-    "./**/*.test.ts*",
-    "./**/*.test-d.ts*",
-    "./**/*.spec.ts*",
-    "./**/*.typetest.ts*"
-  ]
+  "exclude": ["dist", "website", "docs", "test/benchmarks", "src", "test"],
+  "include": ["type-tests"]
 }
