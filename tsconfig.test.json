@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "noImplicitReturns": false
   },
-  "exclude": ["dist", "dist", "website", "docs"],
+  "exclude": ["dist", "website", "docs", "test/benchmarks"],
   "include": [
     "type-tests",
     "test",
