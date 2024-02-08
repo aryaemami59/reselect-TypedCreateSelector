@@ -1,0 +1,18 @@
+{
+  // For building the library.
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["src"],
+  "exclude": [
+    "./**/*.test.ts*",
+    "./**/*.test-d.ts*",
+    "./**/*.spec.ts*",
+    "./**/tests/*",
+    "./**/*.typetest.ts*",
+    "dist",
+    "website",
+    "docs"
+  ]
+}
