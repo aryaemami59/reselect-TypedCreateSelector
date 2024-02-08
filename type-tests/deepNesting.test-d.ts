@@ -1,6 +1,5 @@
 import microMemoize from 'micro-memoize'
 import { createSelector, lruMemoize } from 'reselect'
-import { describe, test } from 'vitest'
 
 interface RootState {
   todos: {

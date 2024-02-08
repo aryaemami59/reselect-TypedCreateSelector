@@ -2,12 +2,11 @@ import lodashMemoize from 'lodash/memoize'
 import memoizeOne from 'memoize-one'
 import microMemoize from 'micro-memoize'
 import {
+  unstable_autotrackMemoize as autotrackMemoize,
   createSelectorCreator,
   lruMemoize,
-  unstable_autotrackMemoize as autotrackMemoize,
   weakMapMemoize
 } from 'reselect'
-import { describe, test } from 'vitest'
 
 interface RootState {
   todos: { id: number; completed: boolean }[]

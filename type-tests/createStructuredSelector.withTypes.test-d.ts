@@ -11,7 +11,6 @@ import {
   lruMemoize,
   weakMapMemoize
 } from 'reselect'
-import { describe, expectTypeOf, test } from 'vitest'
 
 interface Todo {
   id: number

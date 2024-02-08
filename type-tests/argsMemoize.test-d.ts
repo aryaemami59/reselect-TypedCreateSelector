@@ -7,7 +7,6 @@ import {
   lruMemoize,
   weakMapMemoize
 } from 'reselect'
-import { assertType, describe, expectTypeOf, test } from 'vitest'
 
 interface RootState {
   todos: {

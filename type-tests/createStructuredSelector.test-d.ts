@@ -6,7 +6,6 @@ import {
   lruMemoize,
   weakMapMemoize
 } from 'reselect'
-import { describe, expectTypeOf, test } from 'vitest'
 
 interface Todo {
   id: number
@@ -35,7 +34,6 @@ const rootState: RootState = {
 }
 
 describe('createStructuredSelector', () => {
-
   // TODO: Remove this test block once `TypedStructuredSelectorCreator` is removed.
   test('TypedStructuredSelectorCreator should lock down state type', () => {
     const createStructuredAppSelector: TypedStructuredSelectorCreator<RootState> =
