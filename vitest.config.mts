@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename)
 
 export default defineConfig({
   test: {
+    fileParallelism: false,
     globals: true,
     include: ['./test/**/*.(spec|test).[jt]s?(x)'],
     setupFiles: ['test/setup.vitest.ts'],
