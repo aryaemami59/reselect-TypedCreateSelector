@@ -83,8 +83,8 @@ jobs:
       - name: Install TypeScript ${{ matrix.ts }}
         run: yarn add --dev typescript@${{ matrix.ts }}
 
-      - name: 'Remove source to ensure packaged types are used'
-        run: rm -rf src
+      # - name: 'Remove source to ensure packaged types are used'
+      #   run: rm -rf src
 
         # Remove config line that points "reselect" to the `src` folder,
         # so that the typetest will use the installed version instead
