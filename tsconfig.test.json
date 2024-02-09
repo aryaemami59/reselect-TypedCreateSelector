@@ -9,6 +9,5 @@
     "skipLibCheck": true,
     "noImplicitReturns": false
   },
-  "exclude": ["dist", "website", "docs", "test/benchmarks", "src", "test"],
   "include": ["type-tests"]
 }
