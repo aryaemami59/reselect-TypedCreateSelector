@@ -7,13 +7,13 @@ import { defineConfig } from 'tsup'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const tsconfig: NonNullable<Options['tsconfig']> = path.join(
+const tsconfig = path.join(
   __dirname,
   './tsconfig.build.json'
-)
+) satisfies Options['tsconfig']
 
 export default defineConfig(options => {
-  const commonOptions = {
+  const commonOptions: Options = {
     entry: {
       reselect: 'src/index.ts'
     },
@@ -55,12 +55,12 @@ export default defineConfig(options => {
       format: ['esm'],
       outExtension: () => ({ js: '.mjs' }),
       minify: true
-    } as Options,
+    },
     {
       ...commonOptions,
       format: ['cjs'],
       outDir: './dist/cjs/',
       outExtension: () => ({ js: '.cjs' })
     }
-  ]
+  ] as Options[]
 })
