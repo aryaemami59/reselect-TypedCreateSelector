@@ -8,5 +8,4 @@
     "rootDir": "."
   },
   "include": ["."],
-  "exclude": ["dist", "website", "docs"]
 }
