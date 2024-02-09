@@ -31,6 +31,7 @@
     "downlevelIteration": false,
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
+    "noErrorTruncation": true,
     "baseUrl": ".",
     "types": ["vitest/globals", "vitest/importMeta"],
     "paths": {
