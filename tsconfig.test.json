@@ -6,7 +6,6 @@
     "noEmit": true,
     "rootDir": ".",
     "jsx": "react-jsx",
-    "skipLibCheck": true,
     "noImplicitReturns": false
   },
   "include": ["type-tests"]
