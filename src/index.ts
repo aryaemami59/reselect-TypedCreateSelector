@@ -10,6 +10,7 @@ export type {
   TypedStructuredSelectorCreator
 } from './createStructuredSelector'
 export { setGlobalDevModeChecks } from './devModeChecks/setGlobalDevModeChecks'
+export { liteMemoize } from './liteMemoize'
 export { lruMemoize, referenceEqualityCheck } from './lruMemoize'
 export type { LruMemoizeOptions } from './lruMemoize'
 export type {
