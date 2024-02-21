@@ -1,7 +1,7 @@
 import type { AnyFunction, Simplify } from '@internal/types'
-import type { PayloadAction, lruMemoize } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 import { combineReducers, configureStore, createSlice } from '@reduxjs/toolkit'
-import type { OutputSelector, SelectorArray } from 'reselect'
+import type { OutputSelector } from 'reselect'
 
 export interface Todo {
   id: number
@@ -431,22 +431,17 @@ export const logRecomputations = <S extends OutputSelector>(selector: S) => {
   )
 }
 
-export const logSelectorRecomputations = <
-  S extends OutputSelector<SelectorArray, unknown, typeof lruMemoize, any>
->(
+export const logSelectorRecomputations = <S extends OutputSelector>(
   selector: S
 ) => {
-  console.log(
-    `\x1B[32m\x1B[1m${selector.name}\x1B[0m result function recalculated:`,
-    {
-      resultFunc: selector.recomputations(),
-      inputSelectors: selector.dependencyRecomputations(),
-      newResults:
-        typeof selector.memoizedResultFunc.resultsCount === 'function'
-          ? selector.memoizedResultFunc.resultsCount()
-          : undefined
-    }
-  )
+  console.log(`\x1B[32m\x1B[1m${selector.name}\x1B[0m:`, {
+    resultFunc: selector.recomputations(),
+    inputSelectors: selector.dependencyRecomputations(),
+    newResults:
+      typeof selector.memoizedResultFunc.resultsCount === 'function'
+        ? selector.memoizedResultFunc.resultsCount()
+        : undefined
+  })
   // console.log(
   //   `\x1B[32m\x1B[1m${selector.name}\x1B[0m result function recalculated:`,
   //   `\x1B[33m${selector.recomputations().toLocaleString('en-US')}\x1B[0m`,
