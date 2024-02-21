@@ -21,7 +21,6 @@
       "reselect": ["./src/index.ts"] // @remap-prod-remove-line
     },
     "resolveJsonModule": true,
-    "rootDir": "./src",
     "skipLibCheck": true,
     "strict": true,
     "target": "ESnext",
