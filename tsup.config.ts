@@ -1,16 +1,7 @@
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import type { Options } from 'tsup'
 import { defineConfig } from 'tsup'
 
-// No __dirname under Node ESM
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-const tsconfig = path.join(
-  __dirname,
-  './tsconfig.build.json'
-) satisfies Options['tsconfig']
+const tsconfig = 'tsconfig.build.json' satisfies Options['tsconfig']
 
 export default defineConfig(options => {
   const commonOptions: Options = {
