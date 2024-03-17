@@ -9,7 +9,7 @@ import type {
 } from './types'
 
 /**
- * A pseudo-polyfill class for {@linkcode WeakRef WeakRef}.
+ * A pseudo-polyfill class for {@linkcode WeakRef}.
  * It is primarily used in environments where `WeakRef` is not available.
  *
  * @template T - The type of the target value that is strongly referenced.
@@ -60,20 +60,23 @@ const TERMINATED = 1
  */
 interface UnterminatedCacheNode<CachedValueType> {
   /**
-   * Status, represents whether the cached computation returned a value or threw an error.
+   * Status, represents whether the cached computation
+   * returned a value or threw an error.
    * A status of 0 indicates that the computation is unterminated.
    */
   s: 0
 
   /**
    * Value, either the cached result or an error, depending on status.
-   * In the case of an unterminated cache node, this is typically `undefined` or `void`.
+   * In the case of an unterminated cache node,
+   * this is typically `undefined` or `void`.
    */
   v: void
 
   /**
-   * Object cache, a `WeakMap` where non-primitive arguments are stored.
-   * This allows for efficient caching and garbage collection of objects and functions.
+   * Object cache, a {@linkcode WeakMap} where non-primitive
+   * arguments are stored. This allows for efficient caching
+   * and garbage collection of objects and functions.
    */
   o: null | WeakMap<Function | Object, CacheNode<CachedValueType>>
 
@@ -99,8 +102,9 @@ interface UnterminatedCacheNode<CachedValueType> {
  */
 interface TerminatedCacheNode<CachedValueType> {
   /**
-   * Status, represents whether the cached computation returned a value or threw an error.
-   * A status of 1 indicates that the computation is terminated.
+   * Status, represents whether the cached computation
+   * returned a value or threw an error.
+   * A status of `1` indicates that the computation is terminated.
    */
   s: 1
 
@@ -111,14 +115,16 @@ interface TerminatedCacheNode<CachedValueType> {
   v: CachedValueType
 
   /**
-   * Object cache, a `WeakMap` where non-primitive arguments are stored.
-   * This is used for caching object and function references efficiently.
+   * Object cache, a {@linkcode WeakMap} where non-primitive
+   * arguments are stored. This is used for caching object
+   * and function references efficiently.
    */
   o: null | WeakMap<Function | Object, CacheNode<CachedValueType>>
 
   /**
-   * Primitive cache, a regular `Map` where primitive arguments are stored.
-   * This is used for efficiently caching values associated with primitive data types.
+   * Primitive cache, a regular {@linkcode Map} where
+   * primitive arguments are stored. This is used for efficiently
+   * caching values associated with primitive data types.
    */
   p: null | Map<
     string | number | null | void | symbol | boolean,
@@ -161,8 +167,8 @@ function createCacheNode<CachedValueType>(): CacheNode<CachedValueType> {
 }
 
 /**
- * Configuration options for a memoization function utilizing `WeakMap` for
- * its caching mechanism.
+ * Configuration options for a memoization function
+ * utilizing {@linkcode WeakMap} for its caching mechanism.
  *
  * @template Result - The type of the return value of the memoized function.
  *
@@ -171,8 +177,9 @@ function createCacheNode<CachedValueType>(): CacheNode<CachedValueType> {
  */
 export interface WeakMapMemoizeOptions<Result = any> {
   /**
-   * If provided, used to compare a newly generated output value against previous values in the cache.
-   * If a match is found, the old value is returned. This addresses the common
+   * If provided, used to compare a newly generated output value
+   * against previous values in the cache. If a match is found,
+   * the old value is returned. This addresses the common
    * ```ts
    * todos.map(todo => todo.id)
    * ```
@@ -199,22 +206,24 @@ function maybeDeref(r: any) {
 }
 
 /**
- * Creates a tree of `WeakMap`-based cache nodes based on the identity of the
- * arguments it's been called with (in this case, the extracted values from your input selectors).
- * This allows `weakMapMemoize` to have an effectively infinite cache size.
- * Cache results will be kept in memory as long as references to the arguments still exist,
- * and then cleared out as the arguments are garbage-collected.
+ * Creates a tree of {@linkcode WeakMap}-based cache nodes based on the
+ * identity of the arguments it's been called
+ * with (in this case, the extracted values from your input selectors).
+ * This allows {@linkcode weakMapMemoize} to have an effectively infinite
+ * cache size. Cache results will be kept in memory as long as references
+ * to the arguments still exist, and then cleared out as the
+ * arguments are garbage-collected.
  *
- * __Design Tradeoffs for `weakMapMemoize`:__
+ * __Design Tradeoffs for {@linkcode weakMapMemoize}:__
  * - Pros:
  *   - It has an effectively infinite cache size, but you have no control over
- *   how long values are kept in cache as it's based on garbage collection and `WeakMap`s.
+ *   how long values are kept in cache as it's based on garbage collection and {@linkcode WeakMap}s.
  * - Cons:
  *   - There's currently no way to alter the argument comparisons.
  *   They're based on strict reference equality.
  *   - It's roughly the same speed as `lruMemoize`, although likely a fraction slower.
  *
- * __Use Cases for `weakMapMemoize`:__
+ * __Use Cases for {@linkcode weakMapMemoize}:__
  * - This memoizer is likely best used for cases where you need to call the
  * same selector instance with many different arguments, such as a single
  * selector instance that is used in a list item component and called with
@@ -223,12 +232,12 @@ function maybeDeref(r: any) {
  *   useSelector(state => selectSomeData(state, props.category))
  *   ```
  *
- * **Note**: Starting in Reselect 5.0.0, `weakMapMemoize` is the default
- * memoizer used in `createSelector`.
+ * **Note**: Starting in Reselect 5.0.0,
+ * {@linkcode weakMapMemoize} is the default memoizer used in `createSelector`.
  *
  * @param func - The function to be memoized.
- * @param options - An options object containing an optional `resultEqualityCheck` function.
- * @returns A memoized function with a `.clearCache()` method attached.
+ * @param options - An options object containing an optional {@linkcode WeakMapMemoizeOptions.resultEqualityCheck `resultEqualityCheck`} function.
+ * @returns A memoized function with a {@linkcode DefaultMemoizeFields.clearCache `.clearCache()`} method attached.
  *
  * @example
  * <caption>Using `createSelector`</caption>
