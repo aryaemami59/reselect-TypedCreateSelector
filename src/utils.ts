@@ -4,9 +4,9 @@ import { globalDevModeChecks } from './devModeChecks/setGlobalDevModeChecks'
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type {
   DevModeChecks,
+  DevModeChecksExecutionInfo,
   Selector,
-  SelectorArray,
-  DevModeChecksExecutionInfo
+  SelectorArray
 } from './types'
 
 export const NOT_FOUND = /* @__PURE__ */ Symbol('NOT_FOUND')
@@ -14,11 +14,15 @@ export type NOT_FOUND_TYPE = typeof NOT_FOUND
 
 /**
  * Assert that the provided value is a function. If the assertion fails,
- * a `TypeError` is thrown with an optional custom error message.
+ * a {@linkcode TypeError} is thrown with an optional custom error message.
  *
  * @param func - The value to be checked.
  * @param  errorMessage - An optional custom error message to use if the assertion fails.
- * @throws A `TypeError` if the assertion fails.
+ * @throws A {@linkcode TypeError} if the assertion fails.
+ *
+ * @template FunctionType - The type of the expected function.
+ *
+ * @internal
  */
 export function assertIsFunction<FunctionType extends Function>(
   func: unknown,
@@ -31,11 +35,15 @@ export function assertIsFunction<FunctionType extends Function>(
 
 /**
  * Assert that the provided value is an object. If the assertion fails,
- * a `TypeError` is thrown with an optional custom error message.
+ * a `{@linkcode TypeError}` is thrown with an optional custom error message.
  *
  * @param object - The value to be checked.
  * @param  errorMessage - An optional custom error message to use if the assertion fails.
- * @throws A `TypeError` if the assertion fails.
+ * @throws A `{@linkcode TypeError}` if the assertion fails.
+ *
+ * @template ObjectType - The type of the expected object.
+ *
+ * @internal
  */
 export function assertIsObject<ObjectType extends Record<string, unknown>>(
   object: unknown,
@@ -48,11 +56,15 @@ export function assertIsObject<ObjectType extends Record<string, unknown>>(
 
 /**
  * Assert that the provided array is an array of functions. If the assertion fails,
- * a `TypeError` is thrown with an optional custom error message.
+ * a {@linkcode TypeError} is thrown with an optional custom error message.
  *
  * @param array - The array to be checked.
  * @param  errorMessage - An optional custom error message to use if the assertion fails.
- * @throws A `TypeError` if the assertion fails.
+ * @throws A {@linkcode TypeError} if the assertion fails.
+ *
+ * @template FunctionType - The type of functions in the array.
+ *
+ * @internal
  */
 export function assertIsArrayOfFunctions<FunctionType extends Function>(
   array: unknown[],
@@ -73,22 +85,28 @@ export function assertIsArrayOfFunctions<FunctionType extends Function>(
 }
 
 /**
- * Ensure that the input is an array. If it's already an array, it's returned as is.
- * If it's not an array, it will be wrapped in a new array.
+ * Ensure that the input is an array. If it's already an array,
+ * it's returned as is. If it's not an array,
+ * it will be wrapped in a new array.
  *
  * @param item - The item to be checked.
  * @returns An array containing the input item. If the input is already an array, it's returned without modification.
+ *
+ * @internal
  */
 export const ensureIsArray = (item: unknown) => {
   return Array.isArray(item) ? item : [item]
 }
 
 /**
- * Extracts the "dependencies" / "input selectors" from the arguments of `createSelector`.
+ * Extracts the "dependencies" / "input selectors" from
+ * the arguments of `createSelector`.
  *
  * @param createSelectorArgs - Arguments passed to `createSelector` as an array.
  * @returns An array of "input selectors" / "dependencies".
- * @throws A `TypeError` if any of the input selectors is not function.
+ * @throws A {@linkcode TypeError} if any of the input selectors is not function.
+ *
+ * @internal
  */
 export function getDependencies(createSelectorArgs: unknown[]) {
   const dependencies = Array.isArray(createSelectorArgs[0])
@@ -109,6 +127,8 @@ export function getDependencies(createSelectorArgs: unknown[]) {
  * @param dependencies - An array of "dependencies" or "input selectors".
  * @param inputSelectorArgs - An array of arguments being passed to the input selectors.
  * @returns An array of input selector results.
+ *
+ * @internal
  */
 export function collectInputSelectorResults(
   dependencies: SelectorArray,
@@ -130,6 +150,8 @@ export function collectInputSelectorResults(
  * @param firstRun - Indicates whether it is the first time the selector has run.
  * @param devModeChecks - Custom Settings for development mode checks. These settings will override the global defaults.
  * @returns  An object containing the execution information for each development mode check.
+ *
+ * @internal
  */
 export const getDevModeChecksExecutionInfo = (
   firstRun: boolean,
