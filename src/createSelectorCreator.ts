@@ -1,5 +1,3 @@
-import { weakMapMemoize } from './weakMapMemoize'
-
 import type {
   Combiner,
   CreateSelectorOptions,
@@ -15,7 +13,6 @@ import type {
   Simplify,
   UnknownMemoizer
 } from './types'
-
 import {
   assertIsFunction,
   collectInputSelectorResults,
@@ -23,6 +20,7 @@ import {
   getDependencies,
   getDevModeChecksExecutionInfo
 } from './utils'
+import { weakMapMemoize } from './weakMapMemoize'
 
 /**
  * An instance of `createSelector`, customized with a given memoize implementation.
