@@ -122,7 +122,7 @@ describe('Basic selector behavior with autotrack', () => {
       expect(selector(state1)).toBe(3)
       expect(selector.recomputations()).toBe(1)
       // Expected a million calls to a selector with the same arguments to take less than 2 seconds
-      expect(totalTime).toBeLessThan(2000)
+      expect(totalTime).toBeLessThan(1000)
     })
 
     test('basic selector cache hit performance for state changes but shallowly equal selector args', () => {
@@ -143,7 +143,7 @@ describe('Basic selector behavior with autotrack', () => {
       expect(selector.recomputations()).toBe(1)
 
       // Expected a million calls to a selector with the same arguments to take less than 1 second
-      expect(totalTime).toBeLessThan(2000)
+      expect(totalTime).toBeLessThan(process.env.CI ? 1000 : 2000)
     })
   })
 

@@ -200,6 +200,8 @@ jobs:
       fail-fast: false
       matrix:
         node: ['20.x']
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
 
     steps:
       - name: Checkout repo
@@ -230,4 +232,4 @@ jobs:
         run: sed -i -e /@remap-prod-remove-line/d ./tsconfig.base.json ./vitest.config.mts
 
       - name: Run local tests against the build artifact
-        run: yarn test
+        run: yarn test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
