@@ -255,7 +255,7 @@
      * SUPPORTED TOKENS: none
      * DEFAULT VALUE: ""
      */
-    "projectFolderUrl": "https://github.com/reduxjs/reselect.git/tree/main"
+    "projectFolderUrl": "https://github.com/reduxjs/reselect/tree/main"
   },
 
   /**
@@ -516,23 +516,19 @@
         "logLevel": "warning",
         "addToApiReportFile": false
       },
-      "tsdoc-undefined-tag": {
+      "tsdoc-at-sign-in-word": {
         "logLevel": "warning",
         "addToApiReportFile": false
       },
-      "tsdoc-link-tag-unescaped-text": {
+      "tsdoc-at-sign-without-tag-name": {
         "logLevel": "warning",
         "addToApiReportFile": false
       },
-      "tsdoc-escape-greater-than": {
+      "tsdoc-characters-after-block-tag": {
         "logLevel": "warning",
         "addToApiReportFile": false
       },
-      "tsdoc-link-tag-destination-syntax": {
-        "logLevel": "warning",
-        "addToApiReportFile": false
-      },
-      "tsdoc-code-fence-opening-indent": {
+      "tsdoc-characters-after-inline-tag": {
         "logLevel": "warning",
         "addToApiReportFile": false
       },
@@ -540,7 +536,15 @@
         "logLevel": "warning",
         "addToApiReportFile": false
       },
-      "tsdoc-code-span-missing-delimiter": {
+      "tsdoc-code-fence-closing-syntax": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-code-fence-missing-delimiter": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-code-fence-opening-indent": {
         "logLevel": "warning",
         "addToApiReportFile": false
       },
@@ -548,7 +552,255 @@
         "logLevel": "warning",
         "addToApiReportFile": false
       },
-      "tsdoc-characters-after-block-tag": {
+      "tsdoc-code-span-empty": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-code-span-missing-delimiter": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-comment-missing-closing-delimiter": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-comment-missing-opening-delimiter": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-comment-not-found": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-config-cyclic-extends": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-config-duplicate-tag-name": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-config-file-not-found": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-config-invalid-json": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-config-invalid-tag-name": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-config-schema-error": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-config-undefined-tag": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-config-unresolved-extends": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-config-unsupported-schema": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-escape-greater-than": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-escape-right-brace": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-extra-inheritdoc-tag": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-html-string-missing-quote": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-html-tag-missing-equals": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-html-tag-missing-greater-than": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-html-tag-missing-string": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-inheritdoc-incompatible-summary": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-inheritdoc-incompatible-tag": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-inheritdoc-tag-syntax": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-inline-tag-missing-braces": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-inline-tag-missing-right-brace": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-inline-tag-unescaped-brace": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-link-tag-destination-syntax": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-link-tag-empty": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-link-tag-invalid-url": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-link-tag-unescaped-text": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-malformed-html-name": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-malformed-inline-tag": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-malformed-tag-name": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-missing-deprecation-message": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-missing-html-end-tag": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-missing-reference": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-missing-tag": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-param-tag-missing-hyphen": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-param-tag-with-invalid-name": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-param-tag-with-invalid-optional-name": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-param-tag-with-invalid-type": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-empty-identifier": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-hash-syntax": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-malformed-import-path": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-malformed-package-name": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-missing-colon": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-missing-dot": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-missing-hash": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-missing-identifier": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-missing-label": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-missing-quote": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-missing-right-bracket": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-missing-right-paren": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-selector-missing-parens": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-selector-syntax": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-symbol-syntax": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-reference-unquoted-identifier": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-tag-should-not-have-braces": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-text-after-html-string": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-undefined-tag": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-unnecessary-backslash": {
+        "logLevel": "warning",
+        "addToApiReportFile": false
+      },
+      "tsdoc-unsupported-tag": {
         "logLevel": "warning",
         "addToApiReportFile": false
       }
