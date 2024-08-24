@@ -34,3 +34,4 @@ website/.yarn/
 
 docs/examples/**/*.js
 docs/examples/**/*.jsx
+temp

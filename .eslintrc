@@ -8,7 +8,9 @@
     "sourceType": "module",
     "ecmaVersion": 2015
   },
+  "plugins": ["tsdoc"],
   "rules": {
+    "tsdoc/syntax": [2],
     "array-bracket-spacing": [0],
     "comma-dangle": [2, "never"],
     "eol-last": 2,

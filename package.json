@@ -37,7 +37,8 @@
     "docs:start": "yarn --cwd website start",
     "docs:build": "yarn --cwd website build",
     "docs:clear": "yarn --cwd website clear",
-    "docs:serve": "yarn --cwd website serve"
+    "docs:serve": "yarn --cwd website serve",
+    "api-types": "api-extractor run -l -v -c api-extractor.json --typescript-compiler-folder ./node_modules/typescript"
   },
   "keywords": [
     "react",
@@ -55,6 +56,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.47.7",
     "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/react": "^14.1.2",
     "@types/lodash": "^4.14.175",
@@ -67,6 +69,7 @@
     "@typescript/analyze-trace": "^0.10.1",
     "eslint": "^8.0.1",
     "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-tsdoc": "^0.3.0",
     "eslint-plugin-typescript": "0.14.0",
     "jsdom": "^23.0.0",
     "lodash": "^4.17.21",
