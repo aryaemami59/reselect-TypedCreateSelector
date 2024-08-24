@@ -151,7 +151,7 @@ export type TypedStructuredSelectorCreator<RootState = any> =
    * @template MemoizeFunction - The type of the memoize function that is used to create the structured selector. It defaults to `weakMapMemoize`.
    * @template ArgsMemoizeFunction - The type of the of the memoize function that is used to memoize the arguments passed into the generated structured selector. It defaults to `weakMapMemoize`.
    *
-   * @see {@link https://reselect.js.org/api/createStructuredSelector `createStructuredSelector`}
+   * @see {@link https://reselect.js.org/api/createStructuredSelector | `createStructuredSelector`}
    */
   <
     InputSelectorsObject extends RootStateSelectors<RootState> = RootStateSelectors<RootState>,
@@ -190,7 +190,7 @@ export type SelectorsObject<StateType = any> = Record<
  *
  * @template StateType - The type of state that the structured selectors created with this structured selector creator will operate on.
  *
- * @see {@link https://reselect.js.org/api/createStructuredSelector `createStructuredSelector`}
+ * @see {@link https://reselect.js.org/api/createStructuredSelector | `createStructuredSelector`}
  *
  * @public
  */
@@ -298,7 +298,7 @@ export interface StructuredSelectorCreator<StateType = any> {
    * @template MemoizeFunction - The type of the memoize function that is used to create the structured selector. It defaults to `weakMapMemoize`.
    * @template ArgsMemoizeFunction - The type of the of the memoize function that is used to memoize the arguments passed into the generated structured selector. It defaults to `weakMapMemoize`.
    *
-   * @see {@link https://reselect.js.org/api/createStructuredSelector `createStructuredSelector`}
+   * @see {@link https://reselect.js.org/api/createStructuredSelector | `createStructuredSelector`}
    */
   <
     InputSelectorsObject extends SelectorsObject<StateType>,
@@ -351,7 +351,7 @@ export interface StructuredSelectorCreator<StateType = any> {
    * ```
    * @template OverrideStateType - The specific type of state used by all structured selectors created with this structured selector creator.
    *
-   * @see {@link https://reselect.js.org/api/createstructuredselector#defining-a-pre-typed-createstructuredselector `createSelector.withTypes`}
+   * @see {@link https://reselect.js.org/api/createstructuredselector#defining-a-pre-typed-createstructuredselector | `createSelector.withTypes`}
    *
    * @since 5.1.0
    */
@@ -410,7 +410,7 @@ export interface StructuredSelectorCreator<StateType = any> {
  * )
  * ```
  *
- * @see {@link https://reselect.js.org/api/createStructuredSelector `createStructuredSelector`}
+ * @see {@link https://reselect.js.org/api/createStructuredSelector | `createStructuredSelector`}
  *
  * @public
  */

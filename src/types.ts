@@ -72,7 +72,7 @@ export interface CreateSelectorOptions<
    * and warn about potential issues in selector behavior. This option
    * allows you to customize the behavior of these checks per selector.
    *
-   * @see {@link https://reselect.js.org/api/development-only-stability-checks Development-Only Stability Checks}
+   * @see {@link https://reselect.js.org/api/development-only-stability-checks | Development-Only Stability Checks}
    *
    * @since 5.0.0
    */
@@ -315,9 +315,9 @@ export interface DevModeChecks {
    *
    * @default 'once'
    *
-   * @see {@link https://reselect.js.org/api/development-only-stability-checks Development-Only Stability Checks}
-   * @see {@link https://reselect.js.org/api/development-only-stability-checks#inputstabilitycheck `inputStabilityCheck`}
-   * @see {@link https://reselect.js.org/api/development-only-stability-checks#2-per-selector-by-passing-an-inputstabilitycheck-option-directly-to- per-selector-configuration}
+   * @see {@link https://reselect.js.org/api/development-only-stability-checks | Development-Only Stability Checks}
+   * @see {@link https://reselect.js.org/api/development-only-stability-checks#inputstabilitycheck | `inputStabilityCheck`}
+   * @see {@link https://reselect.js.org/api/development-only-stability-checks#2-per-selector-by-passing-an-inputstabilitycheck-option-directly-to- | per-selector-configuration}
    *
    * @since 5.0.0
    */
@@ -331,9 +331,9 @@ export interface DevModeChecks {
    *
    * @default 'once'
    *
-   * @see {@link https://reselect.js.org/api/development-only-stability-checks Development-Only Stability Checks}
-   * @see {@link https://reselect.js.org/api/development-only-stability-checks#identityfunctioncheck `identityFunctionCheck`}
-   * @see {@link https://reselect.js.org/api/development-only-stability-checks#2-per-selector-by-passing-an-identityfunctioncheck-option-directly-to- per-selector-configuration}
+   * @see {@link https://reselect.js.org/api/development-only-stability-checks | Development-Only Stability Checks}
+   * @see {@link https://reselect.js.org/api/development-only-stability-checks#identityfunctioncheck | `identityFunctionCheck`}
+   * @see {@link https://reselect.js.org/api/development-only-stability-checks#2-per-selector-by-passing-an-identityfunctioncheck-option-directly-to- | per-selector-configuration}
    *
    * @since 5.0.0
    */
@@ -607,7 +607,7 @@ export type InterruptRecursion = AnyNonNullishValue
 /**
  * An if-else-like type that resolves depending on whether the given type is `never`.
  * This is mainly used to conditionally resolve the type of a `memoizeOptions` object based on whether `memoize` is provided or not.
- * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/if-never.d.ts Source}
+ * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/if-never.d.ts | Source}
  *
  * @internal
  */
@@ -622,7 +622,7 @@ export type IfNever<T, TypeIfNever, TypeIfNotNever> = [T] extends [never]
  * __Disclaimer:__ When used on an intersection of a function and an object,
  * the function is erased.
  *
- * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/omit-index-signature.d.ts Source}
+ * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/omit-index-signature.d.ts | Source}
  *
  * @internal
  */
@@ -634,8 +634,8 @@ export type OmitIndexSignature<ObjectType> = {
 
 /**
  * The infamous "convert a union type to an intersection type" hack
- * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/union-to-intersection.d.ts Source}
- * @see {@link https://github.com/microsoft/TypeScript/issues/29594 Reference}
+ * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/union-to-intersection.d.ts | Source}
+ * @see {@link https://github.com/microsoft/TypeScript/issues/29594 | Reference}
  *
  * @internal
  */
@@ -659,14 +659,14 @@ export type UnionToIntersection<Union> =
 
 /**
  * Code to convert a union of values into a tuple.
- * @see {@link https://stackoverflow.com/a/55128956/62937 Source}
+ * @see {@link https://stackoverflow.com/a/55128956/62937 | Source}
  *
  * @internal
  */
 type Push<T extends any[], V> = [...T, V]
 
 /**
- * @see {@link https://stackoverflow.com/a/55128956/62937 Source}
+ * @see {@link https://stackoverflow.com/a/55128956/62937 | Source}
  *
  * @internal
  */
@@ -678,7 +678,7 @@ type LastOf<T> = UnionToIntersection<
 
 /**
  * TS4.1+
- * @see {@link https://stackoverflow.com/a/55128956/62937 Source}
+ * @see {@link https://stackoverflow.com/a/55128956/62937 | Source}
  *
  * @internal
  */
@@ -690,7 +690,7 @@ export type TuplifyUnion<
 
 /**
  * Converts "the values of an object" into a tuple, like a type-level `Object.values()`
- * @see {@link https://stackoverflow.com/a/68695508/62937 Source}
+ * @see {@link https://stackoverflow.com/a/68695508/62937 | Source}
  *
  * @internal
  */
@@ -706,7 +706,7 @@ export type ObjectValuesToTuple<
  * Create a type that makes the given keys required.
  * The remaining keys are kept as is.
  *
- * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/set-required.d.ts Source}
+ * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/set-required.d.ts | Source}
  *
  * @internal
  */
@@ -718,7 +718,7 @@ export type SetRequired<BaseType, Keys extends keyof BaseType> = Omit<
 
 /**
  * An if-else-like type that resolves depending on whether the given type is `unknown`.
- * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/if-unknown.d.ts Source}
+ * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/if-unknown.d.ts | Source}
  *
  * @internal
  */
@@ -752,7 +752,7 @@ export type FallbackIfUnknown<T, FallbackTo> = IfUnknown<T, FallbackTo, T>
 
 /**
  * Check whether `U` contains `U1`.
- * @see {@link https://millsp.github.io/ts-toolbelt/modules/union_has.html Source}
+ * @see {@link https://millsp.github.io/ts-toolbelt/modules/union_has.html | Source}
  *
  * @internal
  */
@@ -783,7 +783,7 @@ export type BuiltIn =
 
 /**
  * Expand an item a single level.
- * @see {@link https://stackoverflow.com/a/69288824/62937 Source}
+ * @see {@link https://stackoverflow.com/a/69288824/62937 | Source}
  *
  * @internal
  */
@@ -795,7 +795,7 @@ export type Expand<T> = T extends (...args: infer A) => infer R
 
 /**
  * Expand an item recursively.
- * @see {@link https://stackoverflow.com/a/69288824/62937 Source}
+ * @see {@link https://stackoverflow.com/a/69288824/62937 | Source}
  *
  * @internal
  */
@@ -814,7 +814,7 @@ export type Identity<T> = T
 
 /**
  * Another form of type value expansion
- * @see {@link https://github.com/microsoft/TypeScript/issues/35247 Source}
+ * @see {@link https://github.com/microsoft/TypeScript/issues/35247 | Source}
  *
  * @internal
  */
@@ -839,7 +839,7 @@ export type ExpandFunction<FunctionType extends AnyFunction> =
 /**
  * Useful to flatten the type output to improve type hints shown in editors.
  * And also to transform an interface into a type to aide with assignability.
- * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/simplify.d.ts Source}
+ * @see {@link https://github.com/sindresorhus/type-fest/blob/main/source/simplify.d.ts | Source}
  *
  * @internal
  */
@@ -851,7 +851,7 @@ export type Simplify<T> = T extends AnyFunction
 
 /**
  * Fully expand a type, deeply
- * @see {@link https://github.com/millsp/ts-toolbelt Any.Compute}
+ * @see {@link https://github.com/millsp/ts-toolbelt | Any.Compute}
  *
  * @internal
  */
