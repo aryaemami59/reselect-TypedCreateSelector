@@ -139,9 +139,9 @@ function maybeDeref(r: any) {
  * same selector instance with many different arguments, such as a single
  * selector instance that is used in a list item component and called with
  * item IDs like:
- *   ```ts
+ * ```ts
  *   useSelector(state => selectSomeData(state, props.category))
- *   ```
+ * ```
  * @param func - The function to be memoized.
  * @returns A memoized function with a `.clearCache()` method attached.
  *
