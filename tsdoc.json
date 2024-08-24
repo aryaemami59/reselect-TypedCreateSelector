@@ -6,6 +6,10 @@
 
   "noStandardTags": false,
 
+  "reportUnsupportedHtmlElements": true,
+
+  "supportedHtmlElements": ["caption"],
+
   "tagDefinitions": [
     // Define a custom tag and specify how it should be parsed
     {
