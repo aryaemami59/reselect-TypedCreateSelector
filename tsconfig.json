@@ -11,6 +11,7 @@
     "noErrorTruncation": true,
     "declaration": true,
     "emitDeclarationOnly": true,
+    "declarationMap": true,
     "outDir": "dist",
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
