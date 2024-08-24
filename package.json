@@ -38,7 +38,8 @@
     "docs:build": "yarn --cwd website build",
     "docs:clear": "yarn --cwd website clear",
     "docs:serve": "yarn --cwd website serve",
-    "api-types": "api-extractor run -l -v -c api-extractor.json --typescript-compiler-folder ./node_modules/typescript"
+    "api-types": "api-extractor run -l -v -c api-extractor.json --typescript-compiler-folder ./node_modules/typescript",
+    "api-docs": "api-documenter generate -i temp -o markdown"
   },
   "keywords": [
     "react",
@@ -56,6 +57,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@microsoft/api-documenter": "^7.25.12",
     "@microsoft/api-extractor": "^7.47.7",
     "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/react": "^14.1.2",
