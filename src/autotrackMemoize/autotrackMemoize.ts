@@ -23,10 +23,10 @@ import { createCache } from './autotracking'
  *    - It can have some unexpected behavior. Because it tracks nested field accesses,
  *    cases where you don't access a field will not recalculate properly.
  *    For example, a badly-written selector like:
- *      ```ts
+ * ```ts
  *      createSelector([state => state.todos], todos => todos)
- *      ```
- *      that just immediately returns the extracted value will never update, because it doesn't see any field accesses to check.
+ * ```
+ *    that just immediately returns the extracted value will never update, because it doesn't see any field accesses to check.
  *
  * __Use Cases for `autotrackMemoize`:__
  * - It is likely best used for cases where you need to access specific nested fields
