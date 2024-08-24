@@ -1,5 +1,5 @@
 /**
- * @vitest-environment jsdom
+ * \@vitest-environment jsdom
  */
 
 import * as rtl from '@testing-library/react'
