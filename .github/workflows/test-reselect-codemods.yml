@@ -1,12 +1,13 @@
 name: Test Reselect Codemods
 
-on: [push, pull_request, workflow_dispatch]
+on: [push, pull_request, workflow_dispatch, workflow_call]
 
 env:
   CI_JOB_NUMBER: 3
 
 jobs:
   test:
+    # needs: ./.github/workflows/build-and-test-types.yml
     # needs: reselect/.github/workflows/build-and-test-types.yml@master
     env:
       CI_JOB_NUMBER: 3
