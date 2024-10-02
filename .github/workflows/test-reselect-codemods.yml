@@ -2,6 +2,9 @@ name: Test Reselect Codemods
 
 on: [push, pull_request, workflow_dispatch]
 
+env:
+  CI_JOB_NUMBER: 3
+
 defaults:
   run:
     working-directory: codemods
