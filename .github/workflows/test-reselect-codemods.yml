@@ -9,7 +9,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - uses: ./.github/workflows/build-and-test-types.yml@master
+      - uses: ./.github/workflows/build-and-test-types.yml
 
       - name: Did we fail?
         if: failure()
