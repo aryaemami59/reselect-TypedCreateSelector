@@ -4,18 +4,19 @@ on: [push, pull_request, workflow_dispatch, workflow_call]
 
 jobs:
   reuse:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    uses: ./.github/workflows/build-and-test-types.yml@master
+    # runs-on: ubuntu-latest
+    # steps:
+    #   - name: Checkout code
+    #     uses: actions/checkout@v4
 
-      - uses: ./.github/workflows/build-and-test-types.yml@sha
+    #   - uses: ./.github/workflows/build-and-test-types.yml@sha
 
-      - name: Did we fail?
-        if: failure()
-        run: |
-          ls -ARh
-          ls -ARh .github
+    #   - name: Did we fail?
+    #     if: failure()
+    #     run: |
+    #       ls -ARh
+    #       ls -ARh .github
 
   test:
     needs: reuse
