@@ -11,6 +11,10 @@ jobs:
 
       - uses: ./.github/workflows/build-and-test-types.yml@master
 
+      - name: Did we fail?
+        if: failure()
+        run: ls -ARh
+
   test:
     # needs: ./.github/workflows/build-and-test-types.yml
     # needs: reselect/.github/workflows/build-and-test-types.yml@master
