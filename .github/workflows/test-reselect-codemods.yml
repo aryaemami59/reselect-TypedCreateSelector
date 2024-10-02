@@ -13,7 +13,9 @@ jobs:
 
       - name: Did we fail?
         if: failure()
-        run: ls -ARh
+        run: |
+          ls -ARh
+          ls -ARh .github
 
   test:
     # needs: ./.github/workflows/build-and-test-types.yml
