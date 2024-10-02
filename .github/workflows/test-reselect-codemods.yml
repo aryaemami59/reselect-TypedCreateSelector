@@ -8,6 +8,8 @@ defaults:
 
 jobs:
   test:
+    env:
+      CI_JOB_NUMBER: 5
     name: Run test Suite
     runs-on: ${{ matrix.os }}
 
