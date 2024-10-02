@@ -11,6 +11,7 @@ defaults:
 
 jobs:
   test:
+    # needs: reselect/.github/workflows/build-and-test-types.yml@master
     env:
       CI_JOB_NUMBER: 3
     name: Run test Suite
@@ -23,6 +24,8 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
+      - uses: ./.github/workflows/build-and-test-types.yml
+
       - name: Checkout code
         uses: actions/checkout@v4
 
