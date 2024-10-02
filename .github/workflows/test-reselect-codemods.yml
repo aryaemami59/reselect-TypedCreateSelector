@@ -27,7 +27,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - uses: ./.github/workflows/build-and-test-types.yml
+      - uses: reselect/.github/workflows/build-and-test-types.yml
 
       - name: Set up Node
         uses: actions/setup-node@v4
