@@ -5,10 +5,6 @@ on: [push, pull_request, workflow_dispatch]
 env:
   CI_JOB_NUMBER: 3
 
-defaults:
-  run:
-    working-directory: codemods
-
 jobs:
   test:
     # needs: reselect/.github/workflows/build-and-test-types.yml@master
@@ -37,19 +33,25 @@ jobs:
           cache: 'yarn'
 
       - name: Check folder contents
+        working-directory: codemods
         run: ls -l .
 
       - name: Install dependencies
+        working-directory: codemods
         run: yarn install
 
       - name: Lint Files
+        working-directory: codemods
         run: yarn lint
 
       - name: Check formatting
+        working-directory: codemods
         run: yarn format-check
 
       - name: Check for duplicate dependencies
+        working-directory: codemods
         run: yarn dedupe --strategy highest --check
 
       - name: Run test suite
+        working-directory: codemods
         run: yarn test
