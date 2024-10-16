@@ -93,11 +93,11 @@ export default defineConfig((options): Options[] => {
         await writeCommonJSEntry()
       }
     },
-    {
-      ...commonOptions,
-      name: 'CJS Type Definitions',
-      format: ['cjs'],
-      dts: { only: true }
-    }
+    // {
+    //   ...commonOptions,
+    //   name: 'CJS Type Definitions',
+    //   format: ['cjs'],
+    //   dts: { only: true }
+    // }
   ]
 })

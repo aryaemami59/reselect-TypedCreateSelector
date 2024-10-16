@@ -22,7 +22,7 @@
     "url": "https://github.com/reduxjs/reselect/issues"
   },
   "scripts": {
-    "build": "yarn clean && tsup",
+    "build": "yarn clean && tsup && yarn api-types",
     "clean": "rimraf dist",
     "format": "prettier --write \"{src,test}/**/*.{js,ts}\" \"docs/**/*.md\"",
     "lint": "eslint src test",
@@ -38,7 +38,7 @@
     "docs:build": "yarn --cwd website build",
     "docs:clear": "yarn --cwd website clear",
     "docs:serve": "yarn --cwd website serve",
-    "api-types": "api-extractor run -l -v -c api-extractor.json --typescript-compiler-folder ./node_modules/typescript",
+    "api-types": "rm -rf build && tsc -p tsconfig.build.json && api-extractor run -l -v -c api-extractor.json --typescript-compiler-folder ./node_modules/typescript",
     "api-docs": "api-documenter generate -i temp -o markdown"
   },
   "keywords": [

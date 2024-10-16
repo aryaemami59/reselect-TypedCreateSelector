@@ -1,29 +1,35 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "target": "ESNext",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "jsx": "react",
+    "noEmit": true,
     "noErrorTruncation": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "declarationMap": true,
-    "outDir": "dist",
-    "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true,
-    "rootDirs": ["./src"],
-    "rootDir": ".",
-    "types": ["vitest/globals", "vitest/importMeta"],
-    "baseUrl": ".",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "outDir": "./dist",
     "paths": {
-      "reselect": ["src/index.ts"], // @remap-prod-remove-line
-      "@internal/*": ["src/*"]
-    }
-  },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules", "dist"]
+      "@internal/*": ["./src/*"],
+      "reselect": ["./src/index.ts"] // @remap-prod-remove-line
+    },
+    "resolveJsonModule": true,
+    "rootDir": "./",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ESNext",
+    "types": ["vitest/globals", "vitest/importMeta"],
+    "useDefineForClassFields": true,
+    "useUnknownInCatchVariables": true
+  }
 }
